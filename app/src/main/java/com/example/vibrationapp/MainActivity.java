@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity
     Vibrator vib;
     SeekBar seekBar;
     SeekBar seekBar2;
+    SeekBar seekBar3;
     int ms =0;
 
     @Override
@@ -32,17 +33,17 @@ public class MainActivity extends AppCompatActivity
         seekBar = findViewById(R.id.seekbar1);
         seekBar.setOnSeekBarChangeListener(this);
         seekBar.setProgress(0);
-        seekBar.setMax(20);
+        seekBar.setMax(10);
 
         seekBar2 = findViewById(R.id.seekbar2);
         seekBar2.setOnSeekBarChangeListener(this);
         seekBar2.setProgress(0);
-        seekBar2.setMax(10);
+        seekBar2.setMax(20);
 
-        seekBar2 = findViewById(R.id.seekbar3);
-        seekBar2.setOnSeekBarChangeListener(this);
-        seekBar2.setProgress(0);
-        seekBar2.setMax(1000);
+        seekBar3 = findViewById(R.id.seekbar3);
+        seekBar3.setOnSeekBarChangeListener(this);
+        seekBar3.setProgress(0);
+        seekBar3.setMax(1000);
     }
 
     @Override
@@ -68,12 +69,13 @@ public class MainActivity extends AppCompatActivity
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
         switch (seekBar.getId()){
             case R.id.seekbar1:
-                ms =i*5;
+                ms =i;
                 bt1.setText(ms+"ms");
                 break;
             case R.id.seekbar2:
-                ms =i*10;
+                ms =i*5;
                 bt1.setText(ms+"ms");
+                break;
             case R.id.seekbar3:
                 ms =i;
                 bt1.setText(ms+"ms");
